@@ -71,8 +71,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0/gadg
 TARGET_DISABLE_TRIPLE_BUFFERING := false
 
 # TWRP
-RECOVERY_VARIANT := twrp
-
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/etc/twrp.fstab
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
