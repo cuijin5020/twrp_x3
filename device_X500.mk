@@ -3,14 +3,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/Letv/X500/overlay
+DEVICE_PACKAGE_OVERLAYS += device/letv/x3/overlay
 
-LOCAL_PATH := device/Letv/X500
+LOCAL_PATH := device/letv/x3
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
+	LOCAL_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
