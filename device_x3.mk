@@ -15,6 +15,8 @@ else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -33,12 +35,27 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.service.acm.enable=0 \
     persist.sys.usb.config=mtp
 
+# MEH
+#$(shell rm -rf $(OUT)/recovery/root/init.rc)
+#$(shell mkdir -p $(OUT)/recovery/root/)
+#$(shell cp -r $(LOCAL_PATH/rootdir/*) $(OUT)/recovery/root/)
+#PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/letv/x3/rootdir,recovery/root)
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.mt6795:root/fstab.mt6795 \
-    $(LOCAL_PATH)/rootdir/init.mt6795.rc:root/init.mt6795.rc \
-    $(LOCAL_PATH)/rootdir/init.rc:root/init.mt6795.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.mt6595.rc:root/ueventd.mt6595.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.mt6795.rc:root/ueventd.mt6795.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.rc:root/ueventd.rc
+   $(LOCAL_PATH)/rootdir/enableswap.sh:recovery/root/enableswap.sh \
+   $(LOCAL_PATH)/rootdir/factory_init.project.rc:recovery/root/factory_init.project.rc \
+   $(LOCAL_PATH)/rootdir/factory_init.rc:recovery/root/factory_init.rc \
+   $(LOCAL_PATH)/rootdir/fstab.mt6795:recovery/root/fstab.mt6795 \
+   $(LOCAL_PATH)/rootdir/init.recovery.mt6795.rc:root/init.recovery.mt6795.rc \
+   $(LOCAL_PATH)/rootdir/init.rc:recovery/root/init.rc \
+   $(LOCAL_PATH)/rootdir/init.mt6795.usb.rc:recovery/root/init.mt6795.usb.rc \
+   $(LOCAL_PATH)/rootdir/meta_init.modem.rc:recovery/root/meta_init.modem.rc \
+   $(LOCAL_PATH)/rootdir/meta_init.project.rc:recovery/root/meta_init.project.rc \
+   $(LOCAL_PATH)/rootdir/init.mt6595.rc:recovery/root/init.mt6595.rc \
+   $(LOCAL_PATH)/rootdir/init.mt6795.rc:recovery/root/init.mt6795.rc \
+   $(LOCAL_PATH)/rootdir/meta_init.rc:recovery/root/meta_init.rc \
+   $(LOCAL_PATH)/rootdir/ueventd.mt6595.rc:recovery/root/ueventd.mt6595.rc \
+   $(LOCAL_PATH)/rootdir/ueventd.mt6795.rc:recovery/root/ueventd.mt6795.rc \
+   $(LOCAL_PATH)/rootdir/ueventd.rc:recovery/root/ueventd.rc
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=8

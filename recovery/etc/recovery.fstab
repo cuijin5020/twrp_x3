@@ -5,4 +5,3 @@ misc      				  /misc       emmc      defaults        defaults
 recovery  				  /recovery   emmc      defaults        defaults
 /dev/block/mmcblk0p4      /sdcard     vfat      defaults        defaults
 /dev/block/mmcblk0p6      /system     ext4      defaults        defaults
-

@@ -62,7 +62,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 
 # INIT.rc
-TARGET_PROVIDES_INIT_RC := true
+TARGET_RECOVERY_INITRC := $(LOCAL_PATH)/rootdir/init*.rc
 
 # Recovery
 BOARD_RECOVERY_SWIPE := true
@@ -90,7 +90,7 @@ TW_NO_USB_STORAGE := true
 TW_INCLUDE_CRYPTO := true
 TW_EXTRA_LANGUAGES := true
 TW_EXCLUDE_SUPERSU := true
-TW_CUSTOM_BATTERY_PATH := "/sys/class/power_supply/battery/capacity"
+TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery/
 
 #SELinux Policy File Configuration
 BOARD_SEPOLICY_DIRS += device/letv/x3//sepolicy
