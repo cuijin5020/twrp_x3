@@ -94,6 +94,7 @@ TW_NO_USB_STORAGE := true
 TW_INCLUDE_CRYPTO := true
 TW_EXTRA_LANGUAGES := true
 TW_EXCLUDE_SUPERSU := true
+TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery/capacity
 
 #SELinux Policy File Configuration
 BOARD_SEPOLICY_DIRS += device/letv/x3//sepolicy
