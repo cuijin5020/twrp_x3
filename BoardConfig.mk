@@ -78,7 +78,6 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/etc/twrp.fstab
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness\"
-TW_CUSTOM_BATTERY_PATH := /sys/devices/platform/battery/power_supply/battery
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 TW_MAX_BRIGHTNESS := 255
@@ -86,15 +85,12 @@ TW_DEFAULT_BRIGHTNESS := 165
 TW_NO_SCREEN_BLANK := true
 TW_INTERNAL_STORAGE_PATH := "/sdcard"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_DEFAULT_EXTERNAL_STORAGE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_NO_USB_STORAGE := true
 TW_INCLUDE_CRYPTO := true
 TW_EXTRA_LANGUAGES := true
 TW_EXCLUDE_SUPERSU := true
-TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery/capacity
+TW_CUSTOM_BATTERY_PATH := "/sys/class/power_supply/battery/capacity"
 
 #SELinux Policy File Configuration
 BOARD_SEPOLICY_DIRS += device/letv/x3//sepolicy
