@@ -92,5 +92,8 @@ TW_EXTRA_LANGUAGES := true
 TW_EXCLUDE_SUPERSU := true
 TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery/
 
+# Custom bootimg makefile
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/custombootimg.mk
+
 #SELinux Policy File Configuration
 BOARD_SEPOLICY_DIRS += device/letv/x3//sepolicy
